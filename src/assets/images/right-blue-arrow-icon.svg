@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="6px" height="10px" viewBox="0 0 6 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="currencies" transform="translate(-330.000000, -607.000000)" fill-rule="nonzero" fill="#4B80F5">
+            <g id="true-admin" transform="translate(241.000000, 601.000000)">
+                <path d="M94.7841282,11.4950514 L90.258274,15.7947591 C89.970375,16.0684136 89.5035961,16.0684136 89.2158369,15.7947591 C88.9280544,15.5213479 88.9280544,15.0779014 89.2158369,14.8045124 L93.2205191,10.9999281 L89.2159534,7.19547657 C88.9281708,6.92195478 88.9281708,6.47855247 89.2159534,6.20514134 C89.5037359,5.93161955 89.9704915,5.93161955 90.2583905,6.20514134 L94.7842446,10.5049154 C94.9281359,10.6416873 95,10.8207524 95,10.9999059 C95,11.179148 94.9279961,11.3583459 94.7841282,11.4950514 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,106 @@
+<div class="currency-wrapper">
+  <div class="table-wrapper">
+    <button class="btn-primary btn-update-rates" (click)="updateRates()">Update rates</button>
+    <table class="table table-hover">
+      <thead>
+      <tr class="headers">
+        <th class="headers__id">ID</th>
+        <th class="headers__code">Code</th>
+        <th class="headers__name">Name</th>
+        <th class="headers__rate">Rate</th>
+        <th class="headers__delete"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngIf="addCurrencyToRow" class="currency__row" >
+        <td class="currency__cell">
+          <input type="text" value=""   disabled placeholder="" class="input-from">
+        </td>
+        <td class="currency__cell headers__code">
+          <input required type="text"
+                 (focusout)="createCurrency(newCurrency)"
+                 value=""
+                 placeholder=""
+                 class="input-from"
+                 [(ngModel)]="newCurrency.code"
+                 ngClass="required"
+          >
+        </td>
+        <td class="currency__cell headers__name">
+          <input required type="text"
+                 [(ngModel)]="newCurrency.name"
+                 (focusout)="createCurrency(newCurrency)"
+                 value=""
+                 placeholder=""
+                 class="input-from">
+        </td>
+        <td class="currency__cell headers__rate">
+          <input required type="text"
+                 [(ngModel)]="newCurrency.rate"
+                 (focusout)="createCurrency(newCurrency)"
+                 value="" placeholder=""
+                 class="input-from">
+        </td>
+        <td class="currency__cell currency__cellDelete">
+          <button class="btn-delete" (click)="addCurrencyToRow = !addCurrencyToRow">
+          </button>
+        </td>
+      </tr>
+      <ng-container *ngFor="let currency of currencies let i = index">
+        <tr  class="currency__row" *ngIf="i < selectedValue">
+
+          <td class="currency__cell headers__id">
+            <input type="text" value="{{currency.id}}" disabled="true" placeholder="{{currency.id}}" class="input-from">
+          </td>
+          <td class="currency__cell headers__code">
+            <input type="text"
+                   value="{{currency.code}}"
+                   placeholder="{{currency.code}}"
+                   class="input-from"
+                   [ngClass]="{'required':required}"
+                   [(ngModel)]="currency.code"
+                   (focusout)="updateCurrency(currency.id, {'code':currency.code})">
+
+          </td>
+          <td class="currency__cell headers__name">
+            <input type="text"
+                   value="{{currency.name}}"
+                   placeholder="{{currency.name}}"
+                   class="input-from"
+                   [ngClass]="{'required':required}"
+                   [(ngModel)]="currency.name"
+                   (focusout)="updateCurrency(currency.id, {'name':currency.name})"
+                 >
+          </td>
+          <td class="currency__cell headers__rate">
+            <input type="text"
+                   value="{{currency.rate}}"
+                   class="input-from"
+                   placeholder="{{currency.rate}}"
+                   [ngClass]="{'required':required}"
+                   [(ngModel)]="currency.rate"
+                   (focusout)="updateCurrency(currency.id, {'rate':currency.rate})"
+
+                   >
+          </td>
+          <td class="currency__cell currency__cellDelete">
+            <button class="btn-delete" (click)="deleteCurrency(currency.id)">
+            </button>
+          </td>
+        </tr>
+      </ng-container>
+
+      </tbody>
+    </table>
+    <div class="pagination">
+      <div class="pagination-wrapper">
+          <div class="pagination-text">Rows per page</div>
+          <select [(ngModel)]="selectedValue"
+                  class="pagination-list">
+            <option *ngFor="let currencyList of currencyLists" [ngValue]="currencyList.size">{{currencyList.size}}</option>
+          </select>
+        </div>
+      <button class="btn-add" (click)="addRow()"></button>
+    </div>
+  </div>
+</div>

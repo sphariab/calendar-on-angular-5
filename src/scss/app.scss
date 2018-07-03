@@ -1,0 +1,20 @@
+
+body{
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 100%;
+}
+
+html{
+  height: 100%;
+}
+
+button{
+  &:focus{
+    outline:none;
+  }
+}

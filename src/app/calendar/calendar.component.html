@@ -1,0 +1,150 @@
+<div class="calendar">
+  <div class="availability">
+    AVAILABILITY
+  </div>
+    <div class="month-grid-wrapper">
+        <div class="month-grid">
+            <div class="calendar-navs">
+                <div class="month-nav">
+                    <button class="nav-arrow left-arrow-img" (click)="prevMonth()"></button>
+                    <span class="p4">{{ currentDate.format('MMMM') }} {{ currentDate.format('YYYY') }}</span>
+                </div>
+
+              <!--    <div class="year-nav">
+                    <button (click)="prevYear()">&lt;</button>
+                    <span>{{ currentDate.format('YYYY') }}</span>
+                    <button (click)="nextYear()">&gt;</button>
+                  </div-->
+            </div>
+            <div class="day-names_wrapper">
+                <div class="day-names">
+                    <div *ngFor="let name of dayNames" class="day-name p9">
+                      {{ name }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="weeks" >
+                <div *ngFor="let week of weeks" class="week"
+                >
+                    <ng-container *ngFor="let day of week">
+                        <div class="week-date disabled" *ngIf="!isSelectedCurrentMonth(day.mDate)">
+                            <span class="date-text">{{ day.mDate.date() }}</span>
+                        </div>
+
+                        <div class="week-date enabled"
+                           *ngIf="isSelectedCurrentMonth(day.mDate)"
+                           (mousedown)="onMouseDown(day)"
+                           (mouseup)="onMouseUpDay(day)"
+                           [ngClass]="{
+                           'today': day.today,
+                           'selected': day.selected && day.availability !== 1 && day.availability !== 4,
+                           'booked': day.availability === 1 ,
+                           'available':  day.availability === 2,
+                           'unavailable': day.availability === 3,
+                           'requested': day.availability === 4,
+                           'start-border': day.startBorder,
+                           'end-border': day.endBorder,
+                            'left-margin': day.leftMargin,
+                            'right-margin': day.rightMargin
+                             }">
+                            <span class="date-text">{{ day.mDate.date() }}</span>
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+        <div class="month-grid">
+            <div class="calendar-navs">
+                <div class="month-nav">
+                    <span class="p4">{{ nextMonthDate.format('MMMM') }} {{ currentDate.format('YYYY') }}</span>
+                    <button class="nav-arrow right-arrow-img" (click)="nextMonth()"></button>
+                </div>
+            </div>
+
+            <div class="day-names_wrapper">
+                <div class="day-names">
+                    <div *ngFor="let name of dayNames" class="day-name p9">
+                      {{ name }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="weeks">
+                <div *ngFor="let nextMonthWeek of nextMonthWeeks" class="week"
+                     >
+                    <ng-container *ngFor="let day of nextMonthWeek">
+                        <div class="week-date disabled" *ngIf="!isSelectedNextMonth(day.mDate)">
+                            <span class="date-text">{{ day.mDate.date() }}</span>
+                        </div>
+                        <div class="week-date enabled"
+                             *ngIf="isSelectedNextMonth(day.mDate)"
+                             (mousedown)="onMouseDown(day)"
+                             (mouseup)="onMouseUpDay(day)"
+                             [ngClass]="{
+                              'today': day.today,
+                              'selected': day.selected && day.availability !== 1 && day.availability !== 4,
+                              'booked': day.availability === 1 ,
+                              'available':  day.availability === 2,
+                              'unavailable': day.availability === 3,
+                              'requested': day.availability === 4,
+                              'start-border': day.startBorder,
+                              'end-border': day.endBorder,
+                              'left-margin': day.leftMargin,
+                              'right-margin': day.rightMargin
+
+                               }">
+                            <span class="date-text">{{ day.mDate.date() }}</span>
+                        </div>
+                    </ng-container>
+                  </div>
+            </div>
+        </div>
+    </div>
+    <div class="status">
+        <div class="status-wrapper">
+            <div class="status-color available"></div>
+            <p class="status-text">Available</p>
+        </div>
+        <div class="status-wrapper">
+            <div class="status-color requested"></div>
+            <p class="status-text">Requested</p>
+        </div>
+        <div class="status-wrapper">
+            <div class="status-color booked"></div>
+            <p class="status-text">Booked</p>
+        </div>
+        <div class="status-wrapper">
+            <div class="status-color unavailable"></div>
+            <p class="status-text">Unavailable</p>
+        </div>
+        <div class="availability-send__wrapper">
+          <button class="btn btn-send" (click)="sendAvailable()">Set Available</button>
+          <button class="btn btn-send" (click)="sendUnavailable()">Set Unvailable</button>
+
+        </div>
+      <div class="availability-errors">
+        <br>
+        <div *ngIf="showMessage"
+             class=" btn-text available"
+             [@enterAnimation]
+        >Your dates successfully booked</div>
+        <br>
+        <div *ngIf="showErrorMessage"
+             [@enterAnimation]
+             class="btn-text required"
+        >Please, choose available date.</div>
+
+        <div *ngIf="showErrorMessage"
+             [@enterAnimation]
+             class="btn-text required"
+        >No date was selected. Please,choose a date.</div>
+      </div>
+
+    </div>
+
+
+</div>
+
+
+

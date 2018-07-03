@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="6px" height="10px" viewBox="0 0 6 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="calendar" transform="translate(-690.000000, -138.000000)" fill-rule="nonzero" fill="#FFFFFF">
+            <g id="december" transform="translate(427.000000, 128.000000)">
+                <g id="right---arrow" transform="translate(263.000000, 10.000000)">
+                    <path d="M5.78412817,5.49505142 L1.25827398,9.79475907 C0.970374986,10.0684136 0.503596117,10.0684136 0.215836891,9.79475907 C-0.0719456302,9.52134793 -0.0719456302,9.07790137 0.215836891,8.80451237 L4.22051912,4.99992807 L0.215953364,1.19547657 C-0.0718291568,0.921954777 -0.0718291568,0.478552475 0.215953364,0.205141342 C0.503735885,-0.0683804474 0.97049146,-0.0683804474 1.25839045,0.205141342 L5.78424464,4.50491538 C5.9281359,4.64168734 6,4.82075238 6,4.99990594 C6,5.17914803 5.92799613,5.35834586 5.78412817,5.49505142 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

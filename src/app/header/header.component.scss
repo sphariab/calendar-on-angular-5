@@ -1,0 +1,67 @@
+$dayBase: 30px;
+$darkBlue: #4B80F5;
+$base: 5px;
+$seafoam: lightblue;
+$white: #fff;
+$teal: #8ECEF2;
+$grey: #CBC9CD;
+$light-blue-grey: #2f2f2f;
+$light-grey: #D6D6D6;
+$red: #FF6A4F;
+$lighter-grey: #919191;
+$green:#39DFA3;
+
+$RobotoBold: 'Roboto-Bold';
+$RobotoRegular: 'Roboto-Regular';
+$RobotoMedium: 'Roboto-Medium';
+$RobotoLight: 'Roboto-Light';
+
+header {
+  height: 55px;
+  background: $darkBlue;
+}
+
+.content-wrapper{
+  margin: 0 auto;
+  height: 100%;
+  line-height: 55px;
+  max-width: 1024px;
+}
+
+.logo{
+  width: 138px;
+  height:35px;
+  background: url("../../assets/images/logo.svg") no-repeat center;
+  background-size:contain;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.user{
+  display: inline-block;
+  color:$white;
+  font-family: $RobotoRegular;
+  font-size: 16px;
+  vertical-align: top;
+  float: right;
+
+  &:before{
+    background: url("../../assets/images/user-icon.svg") no-repeat center;
+    background-size:contain;
+    content: "";
+    display: inline-block;
+    width:14px;
+    height: 14px;
+    margin-right: 16px;
+  }
+
+  &:after{
+    background: url("../../assets/images/right-arrow-icon.svg") no-repeat center;
+    background-size:contain;
+    content: "";
+    display: inline-block;
+    width:6px;
+    height: 10px;
+    margin-left: 16px;
+  }
+}

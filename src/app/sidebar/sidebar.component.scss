@@ -1,0 +1,112 @@
+$dayBase: 30px;
+$darkBlue: #4B80F5;
+$base: 5px;
+$seafoam: lightblue;
+$white: #fff;
+$teal: #8ECEF2;
+$grey: #CBC9CD;
+$light-blue-grey: #2f2f2f;
+$light-grey: #D6D6D6;
+$red: #FF6A4F;
+$lighter-grey: #919191;
+$green:#39DFA3;
+$light-light-grey: #A6A6A6;
+
+$RobotoBold: 'Roboto-Bold';
+$RobotoRegular: 'Roboto-Regular';
+$RobotoMedium: 'Roboto-Medium';
+$RobotoLight: 'Roboto-Light';
+
+.navigation{
+  width:162px;
+  display: inline-block;
+  box-shadow: 0 0 8px -2px #bebebe;
+  height: 100%;
+  vertical-align: top;
+  position: relative;
+
+  .active{
+    box-shadow: 0 0 13px -2px #bebebe;
+    &:before{
+      width: 8px;
+      background: #4B80F5;
+      content: "";
+      display: inline-block;
+      height: 55px;
+      position: absolute;
+      left:0;
+      top:0;
+    }
+  }
+  &-item  {
+    height: 55px;
+    border-bottom: 1px solid #FAFAFA;
+    position: relative;
+    &:hover{
+      box-shadow: 0 0 13px -2px #bebebe;
+      &:before{
+        width: 8px;
+        background: #4B80F5;
+        content: "";
+        display: inline-block;
+        height: 55px;
+        position: absolute;
+        left:0;
+        top:0;
+      }
+    }
+
+    &__name {
+      line-height: 55px;
+      padding-left: 25px;
+      font-family: $RobotoLight;
+      font-size: 16px;
+      color: $light-light-grey;
+      &:before{
+         content: "";
+          display: inline-block;
+          vertical-align: sub;
+          margin-right: 5px;
+       }
+    }
+    &__name.calendar {
+      &:before {
+        background: url("../../assets/images/calendar-icon.svg") no-repeat center;
+        background-size: contain;
+        width: 24px;
+        height: 24px;
+
+      }
+    }
+      &__name.currency{
+        &:before{
+          background: url("../../assets/images/coins-icon.svg") no-repeat center;
+          background-size: contain;
+          width: 24px;
+          height: 23px;
+
+        }
+    }
+  }
+}
+
+.admin-link {
+  position: absolute;
+  bottom: 35px;
+  width: 166px;
+  text-align: center;
+  font-family: "Roboto-Light";
+  font-size: 16px;
+  color: #A6A6A6;
+  div {
+    display: inline-block;
+    &:after {
+      background: url(../../assets/images/right-blue-arrow-icon.svg) no-repeat center;
+      background-size: 6px;
+      width: 6px;
+      content: "";
+      height: 10px;
+      display: inline-block;
+    }
+  }
+}
